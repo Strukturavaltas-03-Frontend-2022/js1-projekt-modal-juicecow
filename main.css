@@ -1,0 +1,155 @@
+/*Szokásos eljárás, beröffentem az alap dolgokat*/
+
+html{
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    line-height:1.5rem;
+
+}
+
+h2{
+    padding-left:50px;
+}
+
+
+/* durrantok egy kis stílust a gomboknak*/
+
+.inditoGombocska{
+    background:#610d0d;
+    padding:2em;
+    color:whitesmoke;
+    border:0;
+    border-radius: 5px;
+}
+
+.inditoGombocska:hover{
+    background-color: grey;
+    color:#610d0d;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+
+/*beállítom az alapokat a modalhoz*/
+
+.modal{
+    display:none;
+    position:fixed;
+    background-color: rgba(41, 19, 19, 0.541); /*rgba színkódolást adtam meg az opacity miatt, ott igazából szabadon váalszottam mindent, így jobban néz ki, szeritnem */
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow:auto;
+}
+
+
+/* most pedig feltöltöm tartalommal,mert amúgy elég unalmas lenne */
+
+
+.modalTartalom{
+    width:100%;
+    padding-top:50px;
+    padding-bottom:50px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:15%;
+    background-color:whitesmoke;
+    box-shadow: 10px 5px 5px rgb(95, 16, 16);
+    border-radius:5px;
+
+    /* dobok bele kis animációt miután a js nagyjából megvan*/
+
+    animation-name:opening;
+    animation-duration: 0.4s;
+
+    
+
+}
+
+
+/* megfűszerezem a gombokat lazásan, ne csak úgy lógjanak össze-vissza*/
+
+.closeButton{
+    float:right;
+    border:#610d0d;
+    border-style: dashed;
+    border-radius: 5px;
+    color:rgb(0,0,0);
+    font-size:50px;
+    margin-right:50px;
+
+
+
+}
+.closeButton:hover{
+    cursor:pointer;
+    background-color:#610d0d;
+    color:whitesmoke;
+    border:black;
+    transition: 0.8s;
+    transition-delay: 0.2s;
+    font-size:50px;
+    border-style: dashed;
+    border-radius: 5px;
+}
+
+
+.modalBody{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+
+}
+
+.redButton{
+    background-color: rgb(214, 13, 13);
+    float:right;
+    font-size:20px;
+    border:none;
+    color:whitesmoke;
+    border-radius: 5px;
+    padding:10px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    cursor:pointer;
+    margin-right:50px;
+
+}
+.greenButton{
+    background-color: rgb(13, 214, 29);
+    float:right;
+    margin-right:10px;
+    font-size:20px;
+    border:none;
+    color:whitesmoke;
+    border-radius: 5px;
+    padding:10px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    cursor:pointer;
+    margin-right:50px;
+
+    
+}
+
+
+
+/* itt ennél a résznél hasznos volt, amikor Józsi mozgatta meg színezgette random azt az ominózus boxot az egyik konzultáción :D*/
+
+@keyframes opening{ 
+    from{opacity: 0;}
+    to{opacity:1;}
+}
+
+@keyframes closing{
+    from{opacity: 1;}
+    to {opacity:0;}
+}
+@media only screen and (max-width: 560px) {
+    .modalTartalom {
+      width:50%;
+    }
+}
