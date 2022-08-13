@@ -17,7 +17,6 @@ function opening(){
 }
 function closing(){
     modal.style.display = 'none';
-    modal.classList.toggle('fading')
 }
 function outsideBox(i){ //random "i" indexet adtam
     if(i.target == modal){
